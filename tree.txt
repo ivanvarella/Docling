@@ -1,0 +1,12 @@
+.
+├── pdfs
+│   └── International-Business-in-the-Digital-Age.pdf_MD.md
+└── scratch
+    ├── 2504.03277v1-with-image-refs.md
+    ├── 2504.03277v1-with-image-refs_artifacts
+    ├── 2504.03277v1-with-images.md
+    ├── International-Business-in-the-Digital-Age-with-image-refs.md
+    ├── International-Business-in-the-Digital-Age-with-image-refs_artifacts
+    └── International-Business-in-the-Digital-Age-with-images.md
+
+5 directories, 5 files
