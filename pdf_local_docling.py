@@ -11,7 +11,7 @@ def normalize_filename(filename):
 
 # Caminho base
 base_path = os.path.join(os.getcwd(), "pdfs")
-target_name = "International-Business-in-the-Digital-Age.pdf"
+target_name = "L13709compilado.pdf"
 normalized_target = normalize_filename(target_name)
 
 # Procurar o arquivo na pasta
@@ -25,20 +25,30 @@ else:
     raise FileNotFoundError(f"Arquivo '{target_name}' não encontrado em {base_path}")
 
 
-# Convertendo para Markdown
+# Convertendo para Markdown e texto puro
 converter = DocumentConverter()
 result = converter.convert(pdf_path)
 markdown_text = result.document.export_to_markdown()
+text = result.document.export_to_text()
 
 # Salvando o arquivo Markdown
 markdown_filename = target_name + "_MD.md"
+text_filename = target_name + "_TEXT.txt"
 markdown_path = os.path.join(base_path, markdown_filename)
+text_path = os.path.join(base_path, text_filename)
 try:
     with open(markdown_path, "w", encoding="utf-8") as f:
         f.write(markdown_text)
     print(f"Arquivo Markdown salvo em: {markdown_path}\n")
 except Exception as e:
     print(f"Erro ao salvar o arquivo Markdown: {e}\n")
+
+try:
+    with open(text_path, "w", encoding="utf-8") as f:
+        f.write(text)
+    print(f"Arquivo de texto salvo em: {text_path}\n")
+except Exception as e:
+    print(f"Erro ao salvar o arquivo de texto: {e}\n")
 
 
 tables = result.document.tables
